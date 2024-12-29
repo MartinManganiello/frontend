@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "f4e2563f-29db-4557-af62-294fc8903ba2",
+		"name": "MovieBlog",
+		"description": "Es una collection donde encontraras todas los endpoints para la aplicacion MovieBlog.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16151992"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"123\",\n    \"email\": \"lionelmessi@gmail.com\",\n    \"birthDate\": \"1987-06-24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"LionelMessi\",\n    \"password\": \"123\",\n    \"email\": \"lionelmessi2@gmail.com\",\n    \"birthDate\": \"1987-06-24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protected",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikxpb25lbE1lc3NpIiwicGFzc3dvcmQiOiIkMmIkMTAkcFAuRlVKeTIvTGR3aHhJcGp2SlZNT2lOdUw4eGZYTVBzc2MuSzVDclY1VEdJTUxsT0RJc08iLCJpZCI6IjY3NjBjZGEwOGQyYzY0Y2Y5ZmZlNjkxMSIsImlhdCI6MTczNDM5OTU3MiwiZXhwIjoxNzM0NDAwNDcyfQ.W798zViXLIdOwbS-lp19WEUcDFTU8toy23UK8s3sPrs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/protected",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"protected"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-refresh-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikxpb25lbE1lc3NpIiwicGFzc3dvcmQiOiIkMmIkMTAkcFAuRlVKeTIvTGR3aHhJcGp2SlZNT2lOdUw4eGZYTVBzc2MuSzVDclY1VEdJTUxsT0RJc08iLCJpZCI6IjY3NjBjZGEwOGQyYzY0Y2Y5ZmZlNjkxMSIsImlhdCI6MTczNDM5OTU3MiwiZXhwIjoxNzM2OTkxNTcyfQ.LvvglcUzeW1tH4DRdV_Yv-3CRFLP-HBOYyTBfuoZ1zc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "GET Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies?page=1&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Movies Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies?page=1&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Movie By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/d0750444-707d-4063-bc9f-b085f310300e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"d0750444-707d-4063-bc9f-b085f310300e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Movie Populado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/movies/populado/a476c850-7204-4e82-9929-85b5b79d42d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"populado",
+								"a476c850-7204-4e82-9929-85b5b79d42d8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Movies",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikxpb25lbE1lc3NpIiwicGFzc3dvcmQiOiIkMmIkMTAkcFAuRlVKeTIvTGR3aHhJcGp2SlZNT2lOdUw4eGZYTVBzc2MuSzVDclY1VEdJTUxsT0RJc08iLCJpZCI6IjY3NjBkYjgwMGQ3NThhM2MwNGZlNjkxMSIsImlhdCI6MTczNDQ4ODYwMiwiZXhwIjoxNzM0NDg5NTAyfQ.HNg5lTZ5D15KODM0CR9czUQLIYZPqz_TMCQrJAQyUZ4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Armagedon\",\n  \"description\": \" trata sobre un grupo de perforadores de plataformas petrolíferas que son enviados por la NASA a un enorme asteroide que amenaza el planeta Tierra con la idea de taladrar su superficie y poder destruirlo con una bomba nuclear.\",\n  \"gender\": \"\",\n  \"image\": \"https://pics.filmaffinity.com/Armageddon-185976102-large.jpg\",\n  \"publishDate\": \"1998-07-01T00:00:00.000Z\",\n  \"ratings\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Movies",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikxpb25lbE1lc3NpIiwicGFzc3dvcmQiOiIkMmIkMTAkcFAuRlVKeTIvTGR3aHhJcGp2SlZNT2lOdUw4eGZYTVBzc2MuSzVDclY1VEdJTUxsT0RJc08iLCJpZCI6IjY3NjBjZGEwOGQyYzY0Y2Y5ZmZlNjkxMSIsImlhdCI6MTczNDM5OTU3MiwiZXhwIjoxNzM0NDAwNDcyfQ.W798zViXLIdOwbS-lp19WEUcDFTU8toy23UK8s3sPrs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"gender\": \"Romance\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/a476c850-7204-4e82-9929-85b5b79d42d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"a476c850-7204-4e82-9929-85b5b79d42d8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movies",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikxpb25lbE1lc3NpIiwicGFzc3dvcmQiOiIkMmIkMTAkcFAuRlVKeTIvTGR3aHhJcGp2SlZNT2lOdUw4eGZYTVBzc2MuSzVDclY1VEdJTUxsT0RJc08iLCJpZCI6IjY3NjBjZGEwOGQyYzY0Y2Y5ZmZlNjkxMSIsImlhdCI6MTczNDM5OTU3MiwiZXhwIjoxNzM0NDAwNDcyfQ.W798zViXLIdOwbS-lp19WEUcDFTU8toy23UK8s3sPrs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies/794fae71-b3ca-4686-915d-3cb2261ffd80",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"794fae71-b3ca-4686-915d-3cb2261ffd80"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ratings",
+			"item": [
+				{
+					"name": "Create or Update Ratings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikxpb25lbE1lc3NpIiwicGFzc3dvcmQiOiIkMmIkMTAkcFAuRlVKeTIvTGR3aHhJcGp2SlZNT2lOdUw4eGZYTVBzc2MuSzVDclY1VEdJTUxsT0RJc08iLCJpZCI6IjY3Njg2NzdhZTk3ZGQ5MDZkMGZlNjkxMSIsImlhdCI6MTczNTAwNzY4MSwiZXhwIjoxNzM1MDA4NTgxfQ.5WkEG774eN2U_rCQvW5h2ru8qsPi8fvG2ZhQqVNxHNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"stars\": 5,\n  \"user\": \"6760db800d758a3c04fe6912\",\n  \"movie\": \"675f4f96a0d3c5a66cfe6914\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/rating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ratings by User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikxpb25lbE1lc3NpIiwicGFzc3dvcmQiOiIkMmIkMTAkcFAuRlVKeTIvTGR3aHhJcGp2SlZNT2lOdUw4eGZYTVBzc2MuSzVDclY1VEdJTUxsT0RJc08iLCJpZCI6IjY3NjBkYjgwMGQ3NThhM2MwNGZlNjkxMSIsImlhdCI6MTczNDQ5MTI5NywiZXhwIjoxNzM0NDkyMTk3fQ.gr_Ar5symmvLqNGHsCcZLyru0JoqTT2_SdBhqiUFmUA",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/rating/6760cda08d2c64cf9ffe6912",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rating",
+								"6760cda08d2c64cf9ffe6912"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rating",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikxpb25lbE1lc3NpIiwicGFzc3dvcmQiOiIkMmIkMTAkcFAuRlVKeTIvTGR3aHhJcGp2SlZNT2lOdUw4eGZYTVBzc2MuSzVDclY1VEdJTUxsT0RJc08iLCJpYXQiOjE3MzQ0MDA5NzEsImV4cCI6MTczNDQwMTg3MX0.icEuGhpNrIhFOXh6XSIHEK7QxfUFpoLLEyEg3e0FFGA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"stars\": 2,\n  \"user\": \"675f1a5edbaddf87cafe6912\",\n  \"movie\": \"675f4f96a0d3c5a66cfe6914\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/rating/6760cda08d2c64cf9ffe6915",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rating",
+								"6760cda08d2c64cf9ffe6915"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,37 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+    environment:
+      - VITE_BACK_URL=${VITE_BACK_URL}
+      - FRONTEND_PORT=${FRONTEND_PORT}
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - BACKEND_PORT=${BACKEND_PORT}
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      - mongo
+    command: npm start
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - mongo-data:/data/db
+      - ./backend/mongodb/:/docker-entrypoint-initdb.d/
+volumes:
+  mongo-data:
