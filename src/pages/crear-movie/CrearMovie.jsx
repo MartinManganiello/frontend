@@ -60,6 +60,7 @@ const CrearMovie = () => {
   };
 
   return (
+  <div className="container">
     <div className="container my-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -134,6 +135,7 @@ const CrearMovie = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
